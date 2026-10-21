@@ -1,4 +1,4 @@
-/* Captured By Tiffany — v3 motion */
+/* Captured by Tiffany: motion and routing */
 (function () {
   const IMG = "images/Aether-WR-3.jpg.webp";
   const $ = (s, c = document) => c.querySelector(s);
@@ -27,8 +27,8 @@
   ];
   const PACKAGES = [
     { name: "Design Teaser", count: 15, hours: "Up to 2 hours on site" },
-    { name: "Design Essentials", count: 25, hours: "3 – 4 hours on site" },
-    { name: "Design Feature", count: 35, hours: "3 – 4 hours on site" },
+    { name: "Design Essentials", count: 25, hours: "3 to 4 hours on site" },
+    { name: "Design Feature", count: 35, hours: "3 to 4 hours on site" },
     { name: "The Signature Set", count: 60, hours: "Up to 5 hours on site" }
   ];
 
@@ -37,13 +37,13 @@
     <a class="row fx" href="#work/${p.slug}" data-link>
       <span class="n">${String(i + 1).padStart(2, "0")}</span>
       <span class="t">${p.name}</span>
-      <span class="v">View →</span>
+      <span class="v">View</span>
     </a>`).join("");
 
   $("#pk-list").innerHTML = PACKAGES.map(p => `
     <article class="pk fx">
       <h2>${p.name}</h2>
-      <p class="pk-n"><span data-count="${p.count}">0</span><small>Edited images</small></p>
+      <p class="pk-n"><span data-count="${p.count}">0</span><small>edited images</small></p>
       <ul>
         <li>${p.count} professionally edited images</li>
         <li>One shoot location</li>
@@ -69,7 +69,7 @@
       </section>
       ${meta ? `<dl class="proj-meta">${meta}</dl>` : ""}
       <div class="gallery">${figs}</div>
-      <a class="proj-next" href="#work/${next.slug}" data-link data-cursor="Next"><small>Next Project</small><span class="t">${next.name}</span></a>`;
+      <a class="proj-next" href="#work/${next.slug}" data-link data-cursor="Next"><small>Next project</small><span class="t">${next.name}</span></a>`;
     prepare($("#project"));
     return true;
   }
@@ -147,7 +147,7 @@
     pages.forEach(p => (p.hidden = p.dataset.page !== target));
     $$(".hdr a[data-link]").forEach(a => a.classList.toggle("on", a.getAttribute("href").slice(1) === (target === "project" ? "work" : target)));
     document.title = ({ home: "", work: "Work | ", packages: "Packages | " }[target] ??
-      ($("#project h1")?.getAttribute("aria-label") + " | ")) + "Captured By Tiffany";
+      ($("#project h1")?.getAttribute("aria-label") + " | ")) + "Captured by Tiffany";
     closeDrawer();
     $("#cursor-img").classList.remove("show");
     hdr.classList.remove("hide");
