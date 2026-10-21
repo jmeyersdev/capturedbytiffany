@@ -8,22 +8,35 @@
   <link rel="icon" href="images/tiff.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="loading">
   <a class="skip" href="#main">Skip to Content</a>
+
+  <!-- intro loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img src="images/tiff.webp" alt="" class="loader-logo">
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <!-- page transition curtain -->
+  <div class="curtain" id="curtain" aria-hidden="true"><img src="images/tiff.webp" alt=""></div>
+
+  <!-- scroll progress + custom cursor -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label">View</span></div>
 
   <header class="hdr" id="hdr">
     <nav class="hdr-left" aria-label="Main">
-      <a href="#work" data-link>Work</a>
-      <a href="#packages" data-link>Packages</a>
+      <a href="#work" data-link class="ul">Work</a>
+      <a href="#packages" data-link class="ul">Packages</a>
     </nav>
     <a href="#home" data-link class="hdr-logo" aria-label="Captured By Tiffany, home">
       <img src="images/tiff.webp" alt="Captured By Tiffany">
     </a>
     <div class="hdr-right">
-      <a href="#home/contact" data-link>Contact</a>
+      <a href="#home/contact" data-link class="ul">Contact</a>
     </div>
     <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </header>
@@ -40,48 +53,60 @@
     <!-- ============ HOME ============ -->
     <div class="page" data-page="home">
 
-      <section class="hero">
-        <img src="images/Aether-WR-3.jpg.webp" alt="Light-filled dining room with travertine floors and sheer linen curtains" class="hero-img">
+      <section class="hero" data-hero>
+        <div class="hero-media"><img src="images/Aether-WR-3.jpg.webp" alt="Light-filled dining room with travertine floors and sheer linen curtains" class="hero-img"></div>
         <div class="hero-shade"></div>
         <div class="hero-text">
-          <h1>Designed with intention.<br><i>Captured with feeling.</i></h1>
+          <h1 class="hero-h" data-split>Designed with intention.</h1>
+          <h1 class="hero-h it" data-split aria-hidden="true">Captured with feeling.</h1>
         </div>
-        <a href="#intro" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+        <div class="hero-foot">
+          <span class="hero-tag" data-split>Interior &amp; Architectural Photography — Gold Coast</span>
+          <a href="#intro" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+        </div>
       </section>
 
       <section class="intro" id="intro">
-        <p class="statement fx">Editorial interior and architectural photography that captures the considered details, natural light and character of a space.</p>
+        <p class="statement" data-scrub>Editorial interior and architectural photography that captures the considered details, natural light and character of a space.</p>
       </section>
 
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Interiors</span><i>✦</i><span>Architecture</span><i>✦</i><span>Residential</span><i>✦</i><span>Commercial</span><i>✦</i><span>Airbnb</span><i>✦</i>
+          <span>Interiors</span><i>✦</i><span>Architecture</span><i>✦</i><span>Residential</span><i>✦</i><span>Commercial</span><i>✦</i><span>Airbnb</span><i>✦</i>
+        </div>
+      </div>
+
       <section class="bio">
-        <figure class="bio-img fx"><img src="images/Aether-WR-3.jpg.webp" alt="" loading="lazy"></figure>
+        <figure class="bio-img reveal-img"><img src="images/Aether-WR-3.jpg.webp" alt="" loading="lazy" data-speed="0.12"></figure>
         <div class="bio-text">
           <p class="label fx">Behind the Lens</p>
+          <h2 class="bio-h" data-split>A love for design and an eye for detail.</h2>
           <p class="fx">Tiffany is a Gold Coast-based interior photographer, content creator, and the host of ABI Interiors’ House Tours on YouTube. With a love for design and an eye for detail, her photography has been featured in leading architecture and interior design magazines around the world.</p>
           <p class="fx">As a freelance photographer, Tiffany specialises in capturing homes, interiors, and lifestyle spaces with a refined, editorial eye. Her images are warm, thoughtful, and full of life, created to showcase each space in its best light for designers, architects, and brands.</p>
         </div>
       </section>
 
       <section class="split">
-        <p class="label centered fx">Interiors</p>
+        <div class="sec-head"><span class="label fx">01 — Interiors</span></div>
         <div class="split-grid">
-          <a href="#work/35-savoy" data-link class="split-item fx">
-            <figure><img src="images/Aether-WR-3.jpg.webp" alt="The Savoy" loading="lazy"></figure>
-            <h3>The Savoy</h3>
-            <p>Captured for ABI Interiors</p>
+          <a href="#work/35-savoy" data-link class="split-item" data-cursor="View">
+            <figure class="reveal-img"><img src="images/Aether-WR-3.jpg.webp" alt="The Savoy" loading="lazy" data-speed="0.08"></figure>
+            <h3 data-split>The Savoy</h3>
+            <p class="fx">Captured for ABI Interiors</p>
           </a>
-          <a href="#work/the-courtyard-house" data-link class="split-item fx">
-            <figure><img src="images/Aether-WR-3.jpg.webp" alt="The Courtyard House" loading="lazy"></figure>
-            <h3>The Courtyard House</h3>
-            <p>Captured for ABI Interiors</p>
+          <a href="#work/the-courtyard-house" data-link class="split-item lag" data-cursor="View">
+            <figure class="reveal-img"><img src="images/Aether-WR-3.jpg.webp" alt="The Courtyard House" loading="lazy" data-speed="0.08"></figure>
+            <h3 data-split>The Courtyard House</h3>
+            <p class="fx">Captured for ABI Interiors</p>
           </a>
         </div>
       </section>
 
       <section class="arch">
-        <p class="label centered fx">Architecture</p>
-        <a href="#work/aether" data-link class="arch-img">
-          <img src="images/Aether-WR-3.jpg.webp" alt="Aether" loading="lazy" data-parallax>
+        <div class="sec-head"><span class="label fx">02 — Architecture</span></div>
+        <a href="#work/aether" data-link class="arch-img" data-cursor="View" data-grow>
+          <img src="images/Aether-WR-3.jpg.webp" alt="Aether" loading="lazy" data-speed="0.18">
         </a>
         <dl class="arch-credits">
           <div class="fx"><dt>Project</dt><dd>Aether</dd></div>
@@ -93,15 +118,15 @@
 
       <section class="contact" id="contact">
         <p class="label centered fx">Contact</p>
-        <h2 class="contact-title fx">Tell me about your space.</h2>
+        <h2 class="contact-title" data-split>Tell me about your space.</h2>
         <form class="form" id="form" novalidate>
           <div class="pair">
-            <label class="field"><span>First Name <em>(required)</em></span><input name="firstName" required autocomplete="given-name"></label>
-            <label class="field"><span>Last Name <em>(required)</em></span><input name="lastName" required autocomplete="family-name"></label>
+            <label class="field fx"><span>First Name <em>(required)</em></span><input name="firstName" required autocomplete="given-name"></label>
+            <label class="field fx"><span>Last Name <em>(required)</em></span><input name="lastName" required autocomplete="family-name"></label>
           </div>
-          <label class="field"><span>Email <em>(required)</em></span><input type="email" name="email" required autocomplete="email"></label>
+          <label class="field fx"><span>Email <em>(required)</em></span><input type="email" name="email" required autocomplete="email"></label>
 
-          <fieldset class="field">
+          <fieldset class="field fx">
             <legend>What kind of work? <em>(required)</em></legend>
             <div class="opts">
               <label><input type="checkbox" name="workType" value="Residential"> Residential</label>
@@ -111,10 +136,10 @@
             </div>
           </fieldset>
 
-          <label class="field"><span>Location <em>(required)</em></span><input name="location" required></label>
-          <label class="field"><span>Project Details <em>(required)</em></span><textarea name="details" rows="4" required></textarea></label>
+          <label class="field fx"><span>Location <em>(required)</em></span><input name="location" required></label>
+          <label class="field fx"><span>Project Details <em>(required)</em></span><textarea name="details" rows="4" required></textarea></label>
 
-          <fieldset class="field">
+          <fieldset class="field fx">
             <legend>How did you find me? <em>(required)</em></legend>
             <div class="opts">
               <label><input type="radio" name="source" value="Instagram"> Instagram</label>
@@ -125,7 +150,7 @@
           </fieldset>
 
           <p class="msg err" role="alert" hidden></p>
-          <button type="submit" class="btn">Submit</button>
+          <button type="submit" class="btn magnetic"><span>Submit</span></button>
           <p class="msg ok" role="status" hidden>Thank you. Your email app should now open with your enquiry ready to send.</p>
         </form>
       </section>
@@ -134,7 +159,8 @@
     <!-- ============ WORK ============ -->
     <div class="page" data-page="work" hidden>
       <header class="page-top">
-        <h1>Work</h1>
+        <h1 data-split>Work</h1>
+        <p class="count fx"><span data-count="14">0</span> Projects</p>
       </header>
       <div class="index-list" id="index-list"></div>
       <div class="cursor-img" id="cursor-img" aria-hidden="true"><img src="images/Aether-WR-3.jpg.webp" alt=""></div>
@@ -147,32 +173,33 @@
 
     <!-- ============ PACKAGES ============ -->
     <div class="page" data-page="packages" hidden>
-      <section class="pk-hero">
-        <img src="images/Aether-WR-3.jpg.webp" alt="" class="hero-img">
+      <section class="pk-hero" data-hero>
+        <div class="hero-media"><img src="images/Aether-WR-3.jpg.webp" alt="" class="hero-img"></div>
         <div class="hero-shade"></div>
-        <h1 class="pk-title">What We Offer</h1>
+        <h1 class="pk-title" data-split>What We Offer</h1>
       </section>
 
       <section class="pk-list" id="pk-list"></section>
 
       <section class="addons">
         <p class="label centered fx">Need a little more…?</p>
-        <h2 class="addons-title fx">Add Ons</h2>
+        <h2 class="addons-title" data-split>Add Ons</h2>
         <ul class="addons-list">
-          <li class="fx"><span>Finishing Touches</span><span>$200</span></li>
-          <li class="fx"><span>RAW Beauty</span><span>$100</span></li>
-          <li class="fx"><span>Highlight Reel</span><span>$200</span></li>
+          <li class="fx"><span>Finishing Touches</span><span>$<b data-count="200">0</b></span></li>
+          <li class="fx"><span>RAW Beauty</span><span>$<b data-count="100">0</b></span></li>
+          <li class="fx"><span>Highlight Reel</span><span>$<b data-count="200">0</b></span></li>
         </ul>
-        <a href="#home/contact" data-link class="btn">Work With Us</a>
+        <a href="#home/contact" data-link class="btn magnetic"><span>Work With Us</span></a>
       </section>
     </div>
 
   </main>
 
   <footer class="ftr">
-    <img src="images/tiff.webp" alt="" aria-hidden="true" class="ftr-logo">
-    <a href="mailto:hello@capturedbytiffany.com" class="ftr-mail">hello@capturedbytiffany.com</a>
-    <p>All Content Copyright ©2026 Captured By Tiffany</p>
+    <img src="images/tiff.webp" alt="" aria-hidden="true" class="ftr-logo fx">
+    <a href="mailto:hello@capturedbytiffany.com" class="ftr-mail" data-split>hello@capturedbytiffany.com</a>
+    <p class="fx">All Content Copyright ©2026 Captured By Tiffany</p>
+    <button class="to-top" id="to-top">Back to top ↑</button>
   </footer>
 
   <div class="lb" id="lb" hidden><button aria-label="Close">Close</button><img alt=""></div>
