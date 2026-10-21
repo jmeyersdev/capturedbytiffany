@@ -1,18 +1,18 @@
-/* Captured By Tiffany — v3 (single typeface: Newsreader) */
+/* Captured By Tiffany — single typeface: Inter Tight */
 :root{
   --ink:#2b2a29;
   --mute:#8a8580;
   --line:#e4e0da;
   --bg:#ffffff;
   --soft:#f6f3ef;
-  --font:"Newsreader", "Times New Roman", serif;
+  --font:"Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --g:clamp(16px,3.2vw,48px);
   --ease:cubic-bezier(.16,.8,.2,1);
   --ease-io:cubic-bezier(.76,0,.24,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);font-optical-sizing:auto;font-weight:300;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-weight:300;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body.loading{overflow:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
